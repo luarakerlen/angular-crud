@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -26,7 +27,7 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 		HomeComponent,
 		ProductCrudComponent,
 		RedDirective,
-  ProductCreateComponent,
+		ProductCreateComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -36,6 +37,7 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 		MatSidenavModule,
 		MatListModule,
 		MatCardModule,
+		MatButtonModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
