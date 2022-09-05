@@ -1,6 +1,4 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +21,16 @@ import { ProductCrudComponent } from './views/product-crud/product-crud.componen
 import { RedDirective } from './directives/red.directive';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+import { HttpClientModule } from '@angular/common/http';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import { NgModule, LOCALE_ID } from '@angular/core';
+
+registerLocaleData(localePt);
 
 @NgModule({
 	declarations: [
@@ -34,7 +42,7 @@ import { ProductReadComponent } from './components/product/product-read/product-
 		ProductCrudComponent,
 		RedDirective,
 		ProductCreateComponent,
-  ProductReadComponent,
+		ProductReadComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -50,8 +58,11 @@ import { ProductReadComponent } from './components/product/product-read/product-
 		MatInputModule,
 		FormsModule,
 		HttpClientModule,
+		MatTableModule,
+		MatPaginatorModule,
+		MatSortModule,
 	],
-	providers: [],
+	providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
